@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>TDC環哩匯 x 航空卡消費累哩工具 v13.3.1</title>
+  <title>TDC環哩匯 x 航空卡消費累哩工具 v13.3.2</title>
 
   <!-- 外部資源 -->
   <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Mali:wght@500;700&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
     .px-1 { padding-left: 0.25rem !important; padding-right: 0.25rem !important; } .px-2 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } .px-3 { padding-left: 1rem !important; padding-right: 1rem !important; } .px-4 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; } .px-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
 
     /* =========================
-       內聯 SVG 圖示樣式
+       內聯 SVG 圖示樣式 (Lucide)
        ========================= */
     .lucide { 
       width: 1.2em; height: 1.2em; 
@@ -285,8 +285,8 @@
     <div class="d-flex align-items-center">
       <div class="header-icon"><svg class="lucide"><use href="#icon-plane"/></svg></div>
       <div class="header-title">
-        <h5>TDC 航空累哩工具<br>v13.3.1</h5>
-        <small class="text-secondary fw-bold" style="color:#d946ef !important;"><svg class="lucide me-1" style="font-size:0.8em;vertical-align:-0.1em;"><use href="#icon-sparkles"/></svg>穩定除錯版</small>
+        <h5>TDC 航空累哩工具<br>v13.3.2</h5>
+        <small class="text-secondary fw-bold" style="color:#d946ef !important;"><svg class="lucide me-1" style="font-size:0.8em;vertical-align:-0.1em;"><use href="#icon-sparkles"/></svg>終極大成版</small>
       </div>
     </div>
     <div class="d-flex gap-2">
@@ -344,7 +344,7 @@
             </div>
         </div>
 
-        <!-- 乾淨回歸：手動匯率與台銀連結 -->
+        <!-- 全手動精確匯率 -->
         <div id="fx-input-group" class="mt-2 mb-2 p-3" style="background: #f0f9ff; border: 2px dashed #bae6fd; border-radius: 16px; display: none;">
             <label class="form-label text-primary small">請輸入當下精確匯率 (系統自動加計1.5%)</label>
             <div class="input-group mb-2">
@@ -517,7 +517,7 @@
               </ul>
             </div>
 
-            <!-- v13.3 展售櫥窗：AI 顧問彩蛋 -->
+            <!-- v13.3.2 展售櫥窗：AI 顧問彩蛋 -->
             <div id="ai-teaser-container" class="teaser-card mb-3" onclick="showTeaserModal()">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <h6 class="fw-bold mb-0" style="color: #a21caf;"><svg class="lucide me-1"><use href="#icon-sparkles"/></svg>專屬 AI 哩程策略顧問</h6>
@@ -660,7 +660,7 @@
         <div class="modal-body p-0">
             <p class="fw-bold text-dark mb-3">✨ 免費解鎖後，您將獲得三大神級功能：</p>
             <div class="mb-3 p-3 rounded-4" style="background:#f8fafc; border:1px solid #e2e8f0;">
-                <div class="mb-2">✈️ <strong class="text-primary">機票兌換靈感</strong><br><small class="text-muted">結合倉庫點數與最新航司數據，直接告訴您能飛去哪。</small></div>
+                <div class="mb-2">✈️ <strong class="text-primary">機票兌換靈感</strong><br><small class="text-muted">AI 直接幫您合併不同帳戶的點數，並給予您兌換機票的完美靈感。</small></div>
                 <div class="mb-2">🚨 <strong class="text-danger">動態額度糾察隊</strong><br><small class="text-muted">自動掃描卡片額度，快刷滿時主動警告換卡。</small></div>
                 <div>💡 <strong class="text-success">下一步刷卡兵推</strong><br><small class="text-muted">根據消費習慣，量身定做下一階段的主力卡片建議。</small></div>
             </div>
@@ -682,7 +682,7 @@
           <div class="mb-4"><div class="fw-bold mb-2 text-primary">內建神卡</div><div id="builtin-cards-list"></div></div>
           <div class="mb-4"><div class="fw-bold mb-2 text-primary">自訂卡片</div><div id="custom-cards-list" class="mb-3"></div><div class="p-3 border rounded-3" style="background:#fff; border-color:#bfdbfe !important; border-style:dashed !important;"><label class="small fw-bold text-primary mb-2 font-hand">＋ 新增卡片</label><input type="text" id="new-card-name" class="form-control mb-2" placeholder="卡片名稱"><div class="row mb-2"><div class="col-6"><input type="number" id="new-card-dom" class="form-control" placeholder="國內" min="0"></div><div class="col-6"><input type="number" id="new-card-for" class="form-control" placeholder="國外" min="0"></div></div><button onclick="addCustomCard()" class="btn-primary w-100 mt-2 font-hand" style="padding:6px;">確認新增</button></div></div>
           
-          <!-- v13.3 數據魔術貼區塊 -->
+          <!-- v13.3.2 數據魔術貼區塊 -->
           <div class="backup-section">
             <div class="fw-bold mb-3 text-warning d-flex align-items-center" style="color:#b45309;">
               <svg class="lucide me-2"><use href="#icon-copy"/></svg> 💾 數據搬家中心
@@ -698,20 +698,20 @@
             </div>
           </div>
 
-          <!-- v13.3.1 AI 彩蛋金鑰綁定區 -->
+          <!-- v13.3.2 AI 彩蛋金鑰綁定區 (保姆級圖文升級) -->
           <div class="api-setup-section mt-4" id="api-setup-block">
             <h6 class="fw-bold mb-2 d-flex align-items-center justify-content-between" style="color: #a21caf;">
                 <span><svg class="lucide me-1"><use href="#icon-sparkles"/></svg>解鎖 AI 策略顧問</span>
                 <span id="api-status-badge" class="badge bg-secondary" style="font-size:0.7rem;">未綁定</span>
             </h6>
             <div id="api-guide" style="display:none;" class="small text-muted mb-3 bg-white p-3 rounded-4 border">
-                <strong style="color:#701a75;">💡 傻瓜式 3 步驟免費解鎖：</strong><br>
+                <strong style="color:#701a75;">💡 傻瓜式 3 步驟免費解鎖 (保證成功)：</strong><br>
                 <ol class="ps-3 mt-2 mb-2" style="line-height:1.6;">
-                    <li>點擊前往 <a href="https://aistudio.google.com/app/apikey" target="_blank" class="fw-bold" style="color:#d946ef;">Google AI Studio</a>。</li>
-                    <li>點擊畫面上方的藍色按鈕「Create API key」。</li>
-                    <li>複製那段很長的密碼，貼到下方欄位並儲存！</li>
+                    <li>點擊前往 <a href="https://aistudio.google.com/app/apikey" target="_blank" class="fw-bold" style="color:#d946ef;">Google AI Studio 官網</a> (請先登入 Google 帳號)。</li>
+                    <li>進入網頁後，點擊畫面<strong>右上角</strong>的 <strong>「Create API key」</strong> 按鈕。</li>
+                    <li>畫面會出現一長串密碼，點擊它旁邊的複製圖示（<svg style="width:1.2em;height:1.2em;vertical-align:-0.2em;fill:#64748b;" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>），然後貼到下方的框框裡儲存即可！</li>
                 </ol>
-                <div class="text-danger fw-bold" style="font-size:0.7rem;">*金鑰僅儲存於您的手機，絕對安全。</div>
+                <div class="text-danger fw-bold" style="font-size:0.75rem;">*金鑰僅儲存於您的手機，絕對安全。</div>
             </div>
             <button id="btn-show-api-guide" class="btn btn-sm w-100 mb-2 font-hand fw-bold" style="border: 2px solid #f0abfc; color: #a21caf; background: white; border-radius:12px; padding:8px;" onclick="document.getElementById('api-guide').style.display='block'; this.style.display='none';">🎁 點此看如何免費獲取金鑰？</button>
             <div class="input-group">
@@ -759,7 +759,7 @@
 
   <script>
     /* =========================
-       TDC Miles Tool v13.3.1 終極穩定除錯版
+       TDC Miles Tool v13.3.2 終極大成版 (防幻覺雙引擎 + 穩定 AI)
        ========================= */
     const DB_KEY = 'MILES_APP_V12_6_ISOLATED'; 
     const RULES_KEY = 'MILES_APP_RULES_V12_6';
@@ -769,7 +769,7 @@
     let plannerSelectedAssets = new Set();
     let pendingConfirmCallback = null;
 
-    // --- Gemini API (降級為全球穩定版 1.5-flash，並強化報錯) ---
+    // --- Gemini API (降級為全球穩定版 2.5-flash，並強化報錯) ---
     async function fetchWithRetry(url, options, retries = 2) {
         const delays = [1000, 2000];
         let lastErrorMsg = "";
@@ -807,11 +807,22 @@
 
         const loadingBtn = document.getElementById('btn-ai-advisor');
         const origText = loadingBtn.innerHTML;
-        loadingBtn.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div> AI 正在連線與算牌...';
+        loadingBtn.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div> 系統正為 AI 預先計算等值哩程...';
         loadingBtn.disabled = true;
 
         const db = loadDB();
-        const assets = db.warehouse.map(a => `${a.name}: ${a.current}`).join(', ');
+        
+        // 🛡️ 雙引擎防幻覺邏輯：由 JavaScript 預先算出精確等值哩程
+        const assetsDetail = db.warehouse.map(a => {
+            let text = `[${a.type === 'airline' ? '原生哩程' : '轉點積分'}] ${a.name}: 持有 ${a.current.toLocaleString()}`;
+            if (a.type === 'transfer') {
+                let equiv = Math.floor(a.current * (a.unitMiles / a.unitPoints));
+                text += ` (系統已依 ${a.unitPoints}:${a.unitMiles} 公式，為您精確換算為等值 ${equiv.toLocaleString()} 哩的 ${a.targetAirline} 哩程)`;
+            } else {
+                text += ` (目標: ${a.targetAirline})`;
+            }
+            return text;
+        }).join('\n        ');
         
         let limitsText = [];
         const now = new Date();
@@ -823,15 +834,24 @@
             limitsText.push(`${c.name} 已刷 ${curr}/${c.limit}`);
         });
 
+        // 加入戰略鐵律的 System Prompt
         const promptText = `請扮演一位專業、熱情且貼心的台灣信用卡哩程達人（使用繁體中文），為我進行簡短的「哩程與刷卡策略健檢」。
-        我目前的倉庫資產包含: ${assets || '尚無資產'}
-        我本期/本年度的加碼額度消耗狀況: ${limitsText.join(', ') || '尚無紀錄'}
+        我目前的倉庫資產包含:
+        ${assetsDetail || '尚無資產'}
+
+        我本期/本年度的加碼額度消耗狀況:
+        ${limitsText.join(', ') || '尚無紀錄'}
+
+        任務指令：
+        1. 你必須具備跨帳戶整合能力。當發現我有『某航空原生哩程』與『可轉入該航空的積分（請直接使用系統幫你算好的等值哩程）』時，請務必幫我加總合併計算！
+        2. 根據合併後的總火力，告訴我現在能兌換什麼機票（給予具體兌換靈感）。
+        3. 掃描我的額度消耗，若有快滿的卡片請提醒我換卡。
         
-        請給出 3 句具體且鼓勵性的建議。例如提醒我哪個額度快滿了要注意、或是點數可以考慮換哪個國家的機票。語氣要像朋友聊天一樣。`;
+        請給出具體且鼓勵性的建議。語氣要像朋友聊天一樣，排版清晰。`;
 
         try {
-            // 切換為正式公開模型 gemini-1.5-flash
-            const response = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+            // 切換為官方正式主推模型 gemini-2.5-flash (消滅 404 Error)
+            const response = await fetchWithRetry(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -1713,7 +1733,7 @@
 
     function exportDataMagic() {
         const db = loadDB(); const rules = loadRules();
-        const pack = { db, rules, v: '13.3.1', ts: Date.now() };
+        const pack = { db, rules, v: '13.3.2', ts: Date.now() };
         const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(pack))));
         
         if (navigator.clipboard && window.isSecureContext) {
@@ -1762,5 +1782,3 @@
   </script>
 </body>
 </html>
-
-
